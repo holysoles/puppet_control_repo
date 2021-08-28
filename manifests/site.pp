@@ -5,7 +5,9 @@ node 'automaster.donut.lan'{
 
 node 'plexserver.donut.lan'{}
 
-node 'windesktop.donut.lan'{}
+node 'windesktop.donut.lan'{
+  include profile::windows_server
+}
 
 node 'donutdc.donut.lan'{}
 

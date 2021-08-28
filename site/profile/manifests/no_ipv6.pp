@@ -1,1 +1,2 @@
-class profile::no_ipv6{}
+# a class to prevent IPv6 Connections
+class profile::no_ipv6(){}
