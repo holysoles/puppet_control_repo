@@ -1,4 +1,4 @@
-# A scheduled task to reboot a host regularly
+# A scheduled task set to reboot a host regularly
 class win_scheduled_reboot(){
     scheduled_task { 'Automatic Reboot': # Unique name for the scheduled task
     ensure    => 'present',
