@@ -1,5 +1,5 @@
 # A scheduled task set to reboot a host regularly
-class win_scheduled_reboot(){
+class component::win_scheduled_reboot(){
     scheduled_task { 'Automatic Reboot': # Unique name for the scheduled task
     ensure    => 'present',
     command   => "$::system32\\WindowsPowerShell\\v1.0\\powershell.exe",
