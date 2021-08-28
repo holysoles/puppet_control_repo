@@ -1,5 +1,5 @@
 # A general role for a Windows Server
-class windows_server(){
+class profile::windows_server(){
   scheduled_task { 'Automatic Reboot': # Unique name for the scheduled task
     ensure    => 'present',
     command   => 'powershell.exe',
