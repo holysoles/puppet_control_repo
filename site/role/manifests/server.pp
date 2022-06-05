@@ -2,6 +2,7 @@
 class role::server(){
   if $facts['os']['family'] == 'Windows' {
     include profile::windows_server
+    include profile::windows_base
   }
 
   if $facts['os']['family'] == 'Debian' {
