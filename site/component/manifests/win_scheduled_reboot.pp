@@ -1,9 +1,10 @@
 # A scheduled task set to reboot a host regularly
 class component::win_scheduled_reboot(
   Enum['absent','present'] $ensure = 'present',
-  Optional[String]       $schedule = 'weekly',
-  Optional[Array[String]]    $days = ['mon'],
-  Optional[String]          $time  = '04:00',
+  [String]               $schedule = 'weekly',
+  [Array[Enum['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun', 'all']]]
+                             $days = ['mon'],
+  [String]                  $time  = '04:00',
   Boolean                $enabled  = true,
 ){
     scheduled_task { 'Weekly Reboot': # Unique name for the scheduled task

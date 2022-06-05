@@ -1,0 +1,2 @@
+---
+component::win_scheduled_reboot::days: ['tue']
