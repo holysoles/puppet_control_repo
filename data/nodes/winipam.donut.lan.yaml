@@ -1,5 +1,5 @@
 ---
 classes:
- - include role::server
- 
+ - role::server
+
 component::win_scheduled_reboot::days: ['tue']
