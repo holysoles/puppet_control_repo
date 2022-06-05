@@ -2,4 +2,4 @@
 classes:
  - role::server
 
-component::win_scheduled_reboot::days: ['tue']
+component::win_scheduled_reboot::days: ['tues']
