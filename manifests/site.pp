@@ -1,3 +1,5 @@
+hiera_include('classes')
+
 node 'automaster.donut.lan'{
   include role::puppet_master
   include role::server
