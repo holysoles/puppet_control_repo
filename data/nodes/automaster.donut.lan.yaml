@@ -1,3 +1,4 @@
 ---
 classes:
+  - role::puppet_master
   - role::server
