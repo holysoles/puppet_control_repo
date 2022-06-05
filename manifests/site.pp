@@ -6,10 +6,16 @@ node 'automaster.donut.lan'{
 node 'plexserver.donut.lan'{}
 
 node 'windesktop.donut.lan'{
-  include profile::windows_server
+  include role::server
 }
 
-node 'donutdc.donut.lan'{}
+node 'donutdc.donut.lan'{
+  include role::server
+}
+
+node 'winipam.donut.lan'{
+  include role::server
+}
 
 node 'winlaptop.donut.lan'{}
 
