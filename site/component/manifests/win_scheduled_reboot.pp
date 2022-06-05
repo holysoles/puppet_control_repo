@@ -2,8 +2,7 @@
 class component::win_scheduled_reboot(
   Enum['absent','present'] $ensure = 'present',
   String                 $schedule = 'weekly',
-  Array[Pattern['/\A(mon|tue|wed|thurs|fri|sat|sun|all)\Z]']
-                             $days = ['mon'],
+  Array[String]              $days = ['mon'],
   String                    $time  = '04:00',
   Boolean                $enabled  = true,
 ){
