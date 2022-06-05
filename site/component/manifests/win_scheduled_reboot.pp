@@ -1,14 +1,14 @@
 # A scheduled task set to reboot a host regularly
 class component::win_scheduled_reboot(
   Enum['absent','present'] $ensure = 'present',
-  Optional[String]      $schedule  = 'weekly',
+  Optional[String]       $schedule = 'weekly',
   Optional[Array[String]]    $days = ['mon'],
   Optional[String]          $time  = '04:00',
-  Boolean                $enabled  = false,
+  Boolean                $enabled  = true,
 ){
     scheduled_task { 'Weekly Reboot': # Unique name for the scheduled task
     ensure    => $ensure,
-    command   => "$::system32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    command   => "powershell.exe",
     arguments => 'shutdown -r',
     enabled   => "${$enabled}",
     trigger   => [{
