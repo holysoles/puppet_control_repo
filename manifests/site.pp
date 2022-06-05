@@ -1,4 +1,4 @@
-lookup('classes').include
+
 
 node 'automaster.donut.lan'{
   include role::puppet_master
@@ -15,10 +15,8 @@ node 'donutdc.donut.lan'{
   include role::server
 }
 
-node 'winipam.donut.lan'{
-  include role::server
-}
-
 node 'winlaptop.donut.lan'{}
 
-node 'default'{}
+node default {
+  lookup('classes').include
+}
