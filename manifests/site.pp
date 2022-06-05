@@ -1,4 +1,4 @@
-lookup('classes')
+lookup('classes').include
 
 node 'automaster.donut.lan'{
   include role::puppet_master
