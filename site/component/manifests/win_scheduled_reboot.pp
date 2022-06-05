@@ -6,7 +6,7 @@ class component::win_scheduled_reboot(
   String                    $time  = '04:00',
   Boolean                $enabled  = true,
 ){
-  lookup('win_scheduled_reboot')
+  #lookup('win_scheduled_reboot')
     scheduled_task { 'Weekly Reboot': # Unique name for the scheduled task
     ensure    => $ensure,
     command   => "$::system32\\WindowsPowerShell\\v1.0\\powershell.exe",
