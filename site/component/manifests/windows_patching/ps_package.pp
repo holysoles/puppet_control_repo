@@ -1,5 +1,5 @@
 class component::windows_patching::ps_package(
-  [Enum['present','absent','latest']] $ensure  = 'latest',
+  Enum['present','absent','latest'] $ensure  = 'latest',
   String $provider = 'windowspowershell',
 ){
   # Ensure we have the PS module
