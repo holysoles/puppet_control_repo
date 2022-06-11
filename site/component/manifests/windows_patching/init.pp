@@ -1,4 +1,4 @@
-class component::windows_patching(
+class component::windows_patching::init(
   Boolean $enabled = true,
 ){
   if $enabled {
