@@ -8,17 +8,17 @@ class component::windows_patching::scheduled_task(
   Boolean                                           $enabled  = true,
   Boolean                                             $reboot = false,
 ){
-  $args = 'Get-WindowsUpdate -Install -Download -AcceptAll'
+  $command = 'Get-WindowsUpdate -Install -Download -AcceptAll'
   if $reboot {
-    $args += ' -AutoReboot'
+    $rebootArg = ' -AutoReboot'
   }
   else {
-    $args += ' -IgnoreReboot'
+    $rebootArg = ' -IgnoreReboot'
   }
   scheduled_task { 'Windows Patching':
     ensure    => 'present',
     command   => "$::system32\\WindowsPowerShell\\v1.0\\powershell.exe",
-    arguments => $args,
+    arguments => $command + $reboot,
     enabled   => "${$enabled}",
     trigger   => [{
       schedule        => $schedule,
