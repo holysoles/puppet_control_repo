@@ -8,7 +8,7 @@ class component::windows_patching::scheduled_task(
   Boolean                                           $enabled  = true,
   Boolean                                             $reboot = false,
 ){
-  $command = 'Get-WindowsUpdate -Install -Download -AcceptAll'
+  $command = 'Get-WindowsUpdate -Download -AcceptAll; Get-WindowsUpdate -Install -AcceptAll'
   if $reboot {
     $rebootArg = ' -AutoReboot'
   }
