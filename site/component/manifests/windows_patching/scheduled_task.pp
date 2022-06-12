@@ -23,7 +23,7 @@ class component::windows_patching::scheduled_task(
       schedule        => $schedule,
       start_time      => $time,
       day_of_week     => $days,
-      which_occurence => $occurrence,
+      which_occurrence => $occurrence,
     }],
     require   => Package['PSWindowsUpdate'],
   }
