@@ -4,7 +4,7 @@ class component::windows_patching::scheduled_task(
   String                 $schedule = 'monthly',
   Array[String]              $days = ['tues'],
   Enum['first','second','third','fourth','fifth']
-                        $occurence = 'third'
+                        $occurence = 'third',
   String                    $time  = '02:00',
   Boolean                $enabled  = true,
   Boolean                  $reboot = false,
