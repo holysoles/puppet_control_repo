@@ -8,11 +8,12 @@ class component::windows_patching::scheduled_task(
   Boolean                                           $enabled  = true,
   Boolean                                             $reboot = false,
 ){
+  $args = 'Get-WindowsUpdate -Install -Download -AcceptAll'
   if $reboot {
-    $args = 'Get-WUInstall -AcceptAll -AutoReboot'
+    $args += ' -AutoReboot'
   }
   else {
-    $args = 'Get-WUInstall -AcceptAll -IgnoreReboot'
+    $args += ' -IgnoreReboot'
   }
   scheduled_task { 'Windows Patching':
     ensure    => 'present',
