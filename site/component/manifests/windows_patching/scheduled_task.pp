@@ -18,7 +18,7 @@ class component::windows_patching::scheduled_task(
   scheduled_task { 'Windows Patching':
     ensure    => 'present',
     command   => "$::system32\\WindowsPowerShell\\v1.0\\powershell.exe",
-    arguments => $command + $reboot,
+    arguments => "${command}${reboot}",
     enabled   => "${$enabled}",
     trigger   => [{
       schedule        => $schedule,
